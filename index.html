@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mudar Fundo Aleatório</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+    }
+
+    button {
+        
+      padding: 10px 20px;
+      font-size: 18px;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      background-color: #e995ae;
+      color: white;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <button id="changeColorButton"> Clique aqui para mudar Cor do Fundo</button>
+
+  <script>
+    
+    function gerarCorAleatoria() {
+      return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+    }
+
+   
+    const button = document.getElementById('changeColorButton');
+
+    
+    button.addEventListener('click', function () {
+     
+      const novaCor = gerarCorAleatoria();
+      document.body.style.backgroundColor = novaCor;
+    });
+  </script>
+</body>
+</html>
